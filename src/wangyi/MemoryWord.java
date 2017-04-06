@@ -19,24 +19,21 @@ public class MemoryWord
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
 		int m = scanner.nextInt();
-		String[] ns = new String[n];
 		Set<String> set = new HashSet<>();
 		for(int i=0;i<n;i++)
-			ns[i] = scanner.next();
-		for(int i=0;i<m;i++)
-			set.add(scanner.next());
-		scanner.close();
-		long count=0;
-		for(String s : ns)
 		{
-			if (set.contains(s))
+			set.add(scanner.next());
+		}
+		long result = 0;
+		for(int i=0;i<m;i++)
+		{
+			String temp = scanner.next();
+			if (set.contains(temp))
 			{
-				count += (long)Math.pow(s.length(), 2);
+				result +=(long)Math.pow(temp.length(), 2);
 			}
 		}
 		
-		System.out.println(count);
-		
-		
+		System.out.println(result);
 	}
 }
